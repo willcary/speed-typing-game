@@ -9,14 +9,16 @@
   --fs-h2: 1.5rem;
   --fs-h3: 1rem;
   --fs-p: 0.875rem;
+  --fs-input: 1rem;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   :root {
     --fs-h1: 3rem;
     --fs-h2: 2rem;
     --fs-h3: 1.25rem;
     --fs-p: 1rem;
+    --fs-input: 1.25rem;
   }
 }
 
@@ -25,10 +27,9 @@
   box-sizing: border-box;
 }
 
-html,
 body {
   background: black;
-  color: #00b800;
+  color: var(--clr-green);
   margin: 0;
   padding: 0;
   padding-top: 10px;
@@ -52,11 +53,14 @@ main {
   padding: 1em;
 }
 
+.high-score {
+  border-top: solid 2px var(--clr-green);
+  padding-top: 1em;
+}
+
 /* ========== Typography ========== */
 h1 {
   font-size: var(--fs-h1);
-  width: 100%;
-  max-width: max-content;
   border-top: solid 2px var(--clr-green);
   border-bottom: solid 2px var(--clr-green);
   margin: 1em auto;
@@ -75,13 +79,17 @@ p {
   font-size: var(--fs-p);
 }
 
+input {
+  font-size: var(--fs-input);
+}
+
 button {
   font-family: "Press Start 2P", cursive;
   font-size: var(--fs-p);
   display: block;
   margin: 0 auto;
   border: none;
-  background: #00b800;
+  background: var(--clr-green);
   padding: 10px 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -101,7 +109,7 @@ button:disabled {
 /* ========== Form Elements ========== */
 textarea {
   font-family: "Press Start 2P", cursive;
-  border: 3px solid var(--clr-black);
+  border: none;
   width: 90%;
   margin: 0 auto;
   outline: none;
@@ -110,6 +118,18 @@ textarea {
   padding: 10px;
   line-height: 1.5;
   resize: vertical;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  background: var(--clr-green);
+  padding: 0.25em 0.5em;
+  width: 6em;
 }
 
 textarea:disabled {

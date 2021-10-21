@@ -1,13 +1,14 @@
 import {useState, useEffect, useRef} from "react";
 
 function useLogic() {
-    const STARTING_TIME = 10;
-    
+    const [time, setTime] = useState(5);
     const [text, setText] = useState("");
-    const [timeRemaining, setTimeRemaining] = useState(STARTING_TIME);
+    const [timeRemaining, setTimeRemaining] = useState(time);
     const [isTimeRunning, setIsTimeRunning] = useState(false);
     const [wordCount, setWordCount] = useState(0);
     const [wpm, setWpm] = useState(0);
+    const [highScore, setHighScore] = useState(0);
+
     const textBoxRef = useRef(null);
     
     function handleChange(e) {
@@ -21,12 +22,12 @@ function useLogic() {
     }
 
     function calculateWpm(words) {
-        return words / STARTING_TIME * 60
+        return words / time * 60
     }
     
     function startGame() {
         setIsTimeRunning(true);
-        setTimeRemaining(STARTING_TIME);
+        setTimeRemaining(time);
         setText("");
         textBoxRef.current.disabled = false;
         textBoxRef.current.focus();
@@ -35,8 +36,17 @@ function useLogic() {
     function endGame() {
         setIsTimeRunning(false);
         setWordCount(calculateWordCount(text));
-        setWpm(calculateWpm(wordCount));
     }
+
+    useEffect(() => {
+        setWpm(calculateWpm(wordCount));
+    }, [wordCount]);
+
+    useEffect(() => {
+        if (wpm > highScore) {
+            setHighScore(wpm);
+        }
+    }, [wpm])
     
     useEffect(() => {
         if(isTimeRunning && timeRemaining > 0) {
@@ -49,7 +59,7 @@ function useLogic() {
         }
     }, [timeRemaining, isTimeRunning]);
     
-    return [textBoxRef, handleChange, text, isTimeRunning, timeRemaining, startGame, wordCount, wpm];
+    return [time, setTime, textBoxRef, handleChange, text, isTimeRunning, timeRemaining, startGame, wordCount, wpm, highScore];
 }
 
 export default useLogic;
