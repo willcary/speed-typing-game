@@ -1,8 +1,30 @@
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ========== Custom Properties ========== */
+:root {
+  --clr-green: #00b800;
+  --clr-green2: #007400;
+  --clr-black: #000;
+  --clr-gray: #a5a2a2;
+
+  --fs-h1: 2rem;
+  --fs-h2: 1.5rem;
+  --fs-h3: 1rem;
+  --fs-p: 0.875rem;
 }
+
+@media (min-width: 600px) {
+  :root {
+    --fs-h1: 3rem;
+    --fs-h2: 2rem;
+    --fs-h3: 1.25rem;
+    --fs-p: 1rem;
+  }
+}
+
+/* ========== General ========== */
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   background: black;
@@ -15,45 +37,81 @@ body {
 }
 
 body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
   font-weight: 400;
 }
 
 main {
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
+  padding: 1em;
+}
+
+/* ========== Typography ========== */
+h1 {
+  font-size: var(--fs-h1);
+  width: 100%;
+  max-width: max-content;
+  border-top: solid 2px var(--clr-green);
+  border-bottom: solid 2px var(--clr-green);
+  margin: 1em auto;
+  padding: 0.5em;
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+p {
+  font-size: var(--fs-p);
 }
 
 button {
   font-family: "Press Start 2P", cursive;
+  font-size: var(--fs-p);
   display: block;
   margin: 0 auto;
   border: none;
-  background: #a80020;
   background: #00b800;
   padding: 10px 20px;
   text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+button:hover,
+button:focus {
+  outline: solid 3px var(--clr-green2);
+  outline-offset: 3px;
+  cursor: pointer;
 }
 
 button:disabled {
   cursor: not-allowed;
 }
 
-h1 {
-  font-size: 20px;
-  text-align: center;
-}
-
+/* ========== Form Elements ========== */
 textarea {
   font-family: "Press Start 2P", cursive;
-  border: 3px solid black;
+  border: 3px solid var(--clr-black);
   width: 90%;
   margin: 0 auto;
   outline: none;
   height: 200px;
-  background: #00b800;
+  background: var(--clr-green);
   padding: 10px;
+  line-height: 1.5;
+  resize: vertical;
 }
 
 textarea:disabled {
-  background-color: #a5a2a2;
+  background-color: var(--clr-gray);
 }
