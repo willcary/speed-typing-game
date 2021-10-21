@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect, useRef} from "react";
+import useLogic from "./useLogic";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [textBoxRef, handleChange, text, isTimeRunning, timeRemaining, startGame, wordCount] = useLogic();
+    
+    return (
+        <main>
+            <h1>Speed Typing Game</h1>
+            <h2>How fast can you type?</h2>
+            <textarea
+                ref={textBoxRef}
+                onChange={handleChange}
+                value={text}
+                disabled={!isTimeRunning}
+            />
+            <h3>Time remaining: {timeRemaining}</h3>
+            <button 
+                onClick={startGame}
+                disabled={isTimeRunning}
+            >
+                Start
+            </button>
+            <h2>Word count: {wordCount}</h2>
+        </main>
+    );
 }
 
 export default App;
