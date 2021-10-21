@@ -1,8 +1,8 @@
 import React from "react";
-import useLogic from "./useLogic";
+import useLogic from "./custom-hooks/useLogic";
 
 function App() {
-    const [textBoxRef, handleChange, text, isTimeRunning, timeRemaining, startGame, wordCount, wpm] = useLogic();
+    const [time, setTime, textBoxRef, handleChange, text, isTimeRunning, timeRemaining, startGame, wordCount, wpm] = useLogic();
     
     return (
         <main>
@@ -14,6 +14,7 @@ function App() {
                 onChange={handleChange}
                 value={text}
                 disabled={!isTimeRunning}
+                spellCheck='true'
             />
             <h3>Time remaining: {timeRemaining}</h3>
             <button 
@@ -24,6 +25,10 @@ function App() {
             </button>
             <h2>Word count: {wordCount}</h2>
             <h2>Words per Minute: {wpm}</h2>
+
+            <label htmlFor="">
+              Set time (seconds): <input type="number" placeholder={time} value={time} onChange={(e) => setTime(e.target.value)} />
+            </label>
         </main>
     );
 }
