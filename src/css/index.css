@@ -54,8 +54,11 @@ main {
 }
 
 .high-score {
-  border-top: solid 2px var(--clr-green);
-  padding-top: 1em;
+  border: solid 2px var(--clr-green);
+  padding: 0.5em 1em;
+  max-width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* ========== Typography ========== */

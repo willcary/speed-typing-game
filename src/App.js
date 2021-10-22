@@ -29,7 +29,7 @@ function App() {
             <label htmlFor="">
               Set time (seconds): <input type="number" placeholder={time} value={time} onChange={(e) => setTime(e.target.value)} />
             </label>
-            <h2>High Score: {highScore}</h2>
+            <h2 class="high-score">High Score: {highScore}</h2>
         </main>
     );
 }
