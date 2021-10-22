@@ -10,6 +10,7 @@
   --fs-h3: 1rem;
   --fs-p: 0.875rem;
   --fs-input: 1rem;
+  --fs-small: 0.625rem;
 }
 
 @media (min-width: 700px) {
@@ -51,7 +52,7 @@ body {
 main {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 1em;
+  padding: 0 1em 3em;
 }
 
 .high-score {
@@ -108,6 +109,11 @@ button:focus {
 
 button:disabled {
   cursor: not-allowed;
+}
+
+.reset {
+  font-size: var(--fs-small);
+  letter-spacing: 1px;
 }
 
 /* ========== Form Elements ========== */

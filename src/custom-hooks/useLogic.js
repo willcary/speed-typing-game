@@ -16,6 +16,12 @@ function useLogic() {
         const {value} = e.target;
         setText(value);
     }
+
+    function handleTime(e) {
+        const {value} = e.target;
+        setTime(value);
+        setTimeRemaining(value);
+    }
     
     function calculateWordCount(text) {
         const wordsArr = text.trim().split(" ");
@@ -77,7 +83,7 @@ function useLogic() {
         }
     }, [highScore]);
     
-    return [time, setTime, textBoxRef, handleChange, text, isTimeRunning, timeRemaining, startGame, wordCount, wpm, highScore];
+    return [time, handleTime, textBoxRef, handleChange, text, isTimeRunning, timeRemaining, startGame, wordCount, wpm, highScore, setHighScore];
 }
 
 export default useLogic;

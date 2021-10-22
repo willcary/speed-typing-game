@@ -2,7 +2,7 @@ import React from "react";
 import useLogic from "./custom-hooks/useLogic";
 
 function App() {
-    const [time, setTime, textBoxRef, handleChange, text, isTimeRunning, timeRemaining, startGame, wordCount, wpm, highScore] = useLogic();
+    const [time, handleTime, textBoxRef, handleChange, text, isTimeRunning, timeRemaining, startGame, wordCount, wpm, highScore, setHighScore] = useLogic();
     
     return (
         <main>
@@ -26,9 +26,16 @@ function App() {
             <h3>Words per Minute: {wpm}</h3>
 
             <label htmlFor="">
-              Set time (seconds): <input type="number" placeholder={time} value={time} onChange={(e) => setTime(e.target.value)} />
+              Set time (seconds): <input type="number" placeholder={time} value={time} onChange={(e) => handleTime(e)} />
             </label>
             <h2 className="high-score">High Score: {highScore}</h2>
+            <button 
+                onClick={() => setHighScore(0)}
+                disabled={isTimeRunning}
+                className="reset"
+            >
+                Reset High Score
+            </button>
         </main>
     );
 }
