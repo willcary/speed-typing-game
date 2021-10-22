@@ -35,6 +35,7 @@ body {
   padding-top: 10px;
   font-family: "Press Start 2P", cursive;
   text-align: center;
+  line-height: 1.5;
 }
 
 body {
@@ -50,7 +51,7 @@ body {
 main {
   max-width: 900px;
   margin: 0 auto;
-  padding: 1em;
+  padding: 0 1em;
 }
 
 .high-score {
@@ -66,7 +67,7 @@ h1 {
   font-size: var(--fs-h1);
   border-top: solid 2px var(--clr-green);
   border-bottom: solid 2px var(--clr-green);
-  margin: 1em auto;
+  margin: 0.875em auto;
   padding: 0.5em;
 }
 
