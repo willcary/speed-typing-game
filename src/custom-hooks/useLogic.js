@@ -1,4 +1,5 @@
-import {useState, useEffect, useRef} from "react";
+import { useState, useEffect, useRef } from "react";
+import { storageAvailable } from '../utils/storageAvailable';
 
 function useLogic() {
     const [time, setTime] = useState(15);
@@ -37,16 +38,6 @@ function useLogic() {
         setIsTimeRunning(false);
         setWordCount(calculateWordCount(text));
     }
-
-    useEffect(() => {
-        setWpm(calculateWpm(wordCount));
-    }, [wordCount]);
-
-    useEffect(() => {
-        if (wpm > highScore) {
-            setHighScore(wpm);
-        }
-    }, [wpm])
     
     useEffect(() => {
         if(isTimeRunning && timeRemaining > 0) {
@@ -58,6 +49,29 @@ function useLogic() {
             endGame();
         }
     }, [timeRemaining, isTimeRunning]);
+    
+    useEffect(() => {
+        setWpm(calculateWpm(wordCount));
+    }, [wordCount]);
+
+    useEffect(() => {
+        if (wpm > highScore) {
+            setHighScore(wpm);
+        }
+    }, [wpm])
+
+    useEffect(() => {
+        if (storageAvailable('localStorage')) {
+            const storedHighScore = localStorage.getItem('highScore');
+            setHighScore(storedHighScore);
+        }
+    }, []);
+
+    useEffect(() => {
+        if (storageAvailable('localStorage')) {
+            localStorage.setItem('highScore', highScore);
+        }
+    }, [highScore]);
     
     return [time, setTime, textBoxRef, handleChange, text, isTimeRunning, timeRemaining, startGame, wordCount, wpm, highScore];
 }
