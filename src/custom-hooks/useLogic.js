@@ -63,7 +63,11 @@ function useLogic() {
     useEffect(() => {
         if (storageAvailable('localStorage')) {
             const storedHighScore = localStorage.getItem('highScore');
-            setHighScore(storedHighScore);
+            if (storedHighScore) {
+                setHighScore(storedHighScore);
+            } else {
+                setHighScore(0);
+            }
         }
     }, []);
 
