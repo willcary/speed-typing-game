@@ -8,7 +8,6 @@ function App() {
         <main>
             <h1>Speed Typing Game</h1>
             <h2>How fast can you type?</h2>
-            <p>(Click START to begin)</p>
             <textarea
                 ref={textBoxRef}
                 onChange={handleChange}
@@ -23,8 +22,8 @@ function App() {
             >
                 Start
             </button>
-            <h2>Word count: {wordCount}</h2>
-            <h2>Words per Minute: {wpm}</h2>
+            <h3>Word count: {wordCount}</h3>
+            <h3>Words per Minute: {wpm}</h3>
 
             <label htmlFor="">
               Set time (seconds): <input type="number" placeholder={time} value={time} onChange={(e) => setTime(e.target.value)} />
