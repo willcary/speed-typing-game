@@ -15,10 +15,10 @@ I completed the initial version of this app as part of a series of challenges pr
 ## How to use
 
 The UI is straightforward to use. Initially, the typing window will be gray and unclickable and the high score will be set to zero (see below).
-![Initial Speed Typing Game display](./src/assets.images/typing-game-default.jpg)
+![Initial Speed Typing Game display](./src/assets/images/typing-game-default.jpg)
 
 Click start to begin the game. The focus automatically takes the user to the typing window and the clock starts ticking. Below is an image of a game in process where the user already had set a high score previously.
-![Playing the Speed Typing Game](./src/assets.images/typing-game-play.jpg)
+![Playing the Speed Typing Game](./src/assets/images/typing-game-play.jpg)
 
 ## What I learned
 
@@ -30,8 +30,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Credits
 
-![Create React App](https://github.com/facebook/create-react-app)
-![The React Bootcamp](https://scrimba.com/learn/react)
+[Create React App](https://github.com/facebook/create-react-app)
+[The React Bootcamp](https://scrimba.com/learn/react)
 
 ## Improvements
 
