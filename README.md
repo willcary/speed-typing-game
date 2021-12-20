@@ -30,8 +30,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Credits
 
-[Create React App](https://github.com/facebook/create-react-app)
-[The React Bootcamp](https://scrimba.com/learn/react)
+![Create React App](https://github.com/facebook/create-react-app)
+![The React Bootcamp](https://scrimba.com/learn/react)
 
 ## Improvements
 
