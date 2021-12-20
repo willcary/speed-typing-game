@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Speed Typing Game
+
+Ever wonder how fast you type? Well wonder no more! Play the **Speed Typing Game** to find out. View live [here](https://typing-words-per-minute.netlify.app).
+
+## Motivation
+
+I completed the initial version of this app as part of a series of challenges presented in [The React Bootcamp](https://scrimba.com/learn/react). _I thought it could be better_ though, so I added more functionality. Here is a list of additions I made to the original app:
+
+- Words per minute calculations
+- Adjustable time setting
+- High Score
+- Used local storage to retain high score between sessions
+- Ability to reset high score
+
+## How to use
+
+The UI is straightforward to use. Initially, the typing window will be gray and unclickable and the high score will be set to zero (see below).
+![Initial Speed Typing Game display](./src/assets.images/typing-game-default.jpg)
+
+Click start to begin the game. The focus automatically takes the user to the typing window and the clock starts ticking. Below is an image of a game in process where the user already had set a high score previously.
+![Playing the Speed Typing Game](./src/assets.images/typing-game-play.jpg)
+
+## What I learned
+
+While completing this project I became much more fluent using react hooks (useState, useEffect, useContext, and custom hooks). I also figured out how to access and use localStorage through the window interface.
+
+## Technologies
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Credits
 
-In the project directory, you can run:
+[Create React App](https://github.com/facebook/create-react-app)
+[The React Bootcamp](https://scrimba.com/learn/react)
 
-### `npm start`
+## Improvements
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+As of now, misspelled words show with a red underline, but are still included in the word count. It may improve the user experience to implement a spell check for this app. Additionally, The useLogic custom hook should probably be broken into smaller components.
